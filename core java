@@ -12,7 +12,51 @@ There are few things which must be clear before setting up the environment
     3.JVM: JVM (Java Virtual Machine) is an abstract machine. It is a specification that provides runtime environment 
     in which java bytecode can be executed. JVMs are available for many hardware and software platforms. 
  
+ main method: In Java programming language, every application must contain a main method whose signature is:
+
+public static void main(String[] args)
+
+public: So that JVM can execute the method from anywhere.
+static: Main method is to be called without object. The modifiers public and static can be written in either order.
+void: The main method doesn't return anything.
+main(): Name configured in the JVM.
+String[]: The main method accepts a single argument: 
+          an array of elements of type String.
+          
+          
  System is a class in the java.lang package.
  out is a static member of the System class, and is an instance of java.io.PrintStream.
  println is a method of java.io.PrintStream . This method is overloaded to print message to output destination, 
  which is typically a console or file.
+ 
+ /* This is a simple Java program.
+   FileName : "HelloWorld.java". */
+class HelloWorld
+{
+    // Your program begins with a call to main().
+    // Prints "Hello, World" to the terminal window.
+    public static void main(String args[])
+    {
+        System.out.println("Hello World");
+    }
+}
+
+Output : Hello World
+
+ Compiling the program :
+
+    After successfully setting up the environment, we can open terminal in both Windows/Unix and can go to directory where the 
+    file – HelloWorld.java is present.
+    Now, to compile the HelloWorld program, execute the compiler – javac , specifying the name of the source file on the 
+    command line, as shown:
+
+    javac HelloWorld.java 
+
+    The compiler creates a file called HelloWorld.class (in present working directory) that contains the bytecode version of
+    the program. Now, to execute our program, JVM(Java Virtual Machine) needs to be called using java, specifying the name of 
+    the class file on the command line, as shown:
+
+    java HelloWorld
+
+    This will print “Hello, World” to the terminal screen.
+
