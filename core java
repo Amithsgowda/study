@@ -13,3 +13,8 @@ There are few things which must be clear before setting up the environment
     and is intended for end users. JRE can be view as a subset of JDK.
     3.JVM: JVM (Java Virtual Machine) is an abstract machine. It is a specification that provides runtime environment 
     in which java bytecode can be executed. JVMs are available for many hardware and software platforms. 
+ 
+ System is a class in the java.lang package.
+ out is a static member of the System class, and is an instance of java.io.PrintStream.
+ println is a method of java.io.PrintStream . This method is overloaded to print message to output destination, 
+ which is typically a console or file.
