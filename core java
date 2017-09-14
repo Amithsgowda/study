@@ -60,7 +60,7 @@ Output : Hello World
 
     This will print “Hello, World” to the terminal screen.
     
-    
+==========================================================================================================================
     
 How JVM Works – JVM Architecture?
 
@@ -210,6 +210,7 @@ run-time exception java.lang.ClassNotFoundException.
 
 Image Source: http://javarevisited.blogspot.in/2012/12/how-classloader-works-in-java.html
 
+=====================================================================================================================================
 
 JVM Memory
 
@@ -251,4 +252,76 @@ the execution. It enables JVM to call C/C++ libraries and to be called by C/C++ 
 Native Method Libraries :
 
 It is a collection of the Native Libraries(C, C++) which are required by the Execution Engine.
+====================================================================================================================
+
+Does JVM create an object of class Main?
+The answer is “No”. We have studied that the reason for main() static in Java is to make sure that the main() can be called without any instance. To justify the same, we can see that the following program compiles and runs fine.
+
+// Not Main is abstract
+abstract class Main {
+    public static void main(String args[])
+    {
+        System.out.println("Hello");
+    }
+}
+
+Since we can’t create object of abstract classes in Java, it is guaranteed that object of class with main() is not created by JVM.
+
+==============================================================================================================================
+Is main method compulsory in Java?
+
+The answer to this question depends on version of java you are using. Prior to JDK 5, main method was not mandatory in a java program.
+
+You could write your full code under static block and it ran normally.
+The static block is first executed as soon as the class is loaded before the main(); method is invoked and therefore before the main() is called. main is usually declared as static method and hence Java doesn’t need an object to call main method.
+ 
+However, From JDK6 main method is mandatory. If your program doesn’t contain main method, then you will get a run-time error “main method not found in the class”. Note that your program will successfully compile in this case, but at run-time, it will throw error.
+
+// This program will successfully run
+// prior to JDK 5
+public class Test 
+{
+    // static block
+    static
+    {
+        System.out.println("program is running without main() method");
+    }
+}
+
+=============================================================================================================================
+public class Test
+{
+    public static void main(String[] args)
+    {
+        System.out.print("Y" + "O");
+        System.out.print('L' + 'O');
+    }
+}
+
+Actual Output:
+“YO155”.
+
+public class Test 
+{
+    public static void main(String[] args) 
+    {
+        System.out.print("Y" + "O");
+        System.out.print('L');
+        System.out.print('O');
+    }
+}
+
+Output: YOLO
+
+Explanation: This will now print “YOLO” instead of “YO7679”. It is because the widening primitive conversion happens only when ‘+’ operator is present.
+
+
+Widening primitive conversion is applied to convert either or both operands as specified by the following rules. The result of adding Java chars, shorts or bytes is an int:
+
+If either operand is of type double, the other is converted to double.
+Otherwise, if either operand is of type float, the other is converted to float.
+Otherwise, if either operand is of type long, the other is converted to long.
+Otherwise, both operands are converted to type int
+
+=============================================================================================================================
 
