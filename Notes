@@ -3,7 +3,7 @@ Checked Exceptions:
 2.The checked exception classes specified after the throws keyword are part of the contract between the implementer and user. An overriding method can declare the same exceptions, subclasses or no exceptions.
 3.When interfaces are involved, the implementation declaration must have a throws-clause that is compatible with the interface declarations.
 
-
+================================================================================================================================
 public class ConcurrentModificationException extends RuntimeException
 
 1.This exception may be thrown by methods that have detected concurrent modification of an object when such modification is not permissible.
