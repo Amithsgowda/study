@@ -326,6 +326,8 @@ Otherwise, both operands are converted to type int
 =============================================================================================================================
 
 Interesting facts about null in Java
+
+
 Almost all the programming languages are bonded with null. There is hardly a programmer, who is not troubled by null.
 In Java, null is associated java.lang.NullPointerException. As it is a class in java.lang package, it is called when we try to perform some operations with or without null and sometimes we don’t even know where it has happened.
 
@@ -493,3 +495,97 @@ false
 
 =====================================================================================================================================
 
+Association, Composition and Aggregation in Java
+
+Association
+
+Association is relation between two separate classes which establishes through their Objects. Association can be one-to-one, one-to-many, many-to-one, many-to-many.
+In Object-Oriented programming, an Object communicates to other Object to use functionality and services provided by that object. Composition and Aggregation are the two forms of association.
+
+
+// Java program to illustrate the 
+// concept of Association
+import java.io.*;
+ 
+// class bank
+class Bank 
+{
+    private String name;
+     
+    // bank name
+    Bank(String name)
+    {
+        this.name = name;
+    }
+     
+    public String getBankName()
+    {
+        return this.name;
+    }
+} 
+ 
+// employee class 
+class Employee
+{
+    private String name;
+     
+    // employee name 
+    Employee(String name) 
+    {
+        this.name = name;
+    }
+     
+    public String getEmployeeName()
+    {
+        return this.name;
+    } 
+}
+ 
+// Association between both the 
+// classes in main method
+class Association 
+{
+    public static void main (String[] args) 
+    {
+        Bank bank = new Bank("Axis");
+        Employee emp = new Employee("Neha");
+         
+        System.out.println(emp.getEmployeeName() + 
+               " is employee of " + bank.getBankName());
+    }
+}
+Run on IDE
+Output:
+
+Neha is employee of Axis
+In above example two separate classes Bank and Employee are associated through their Objects. Bank can have many employees, So it is a one-to-many relationship.
+
+Aggregation
+
+It is a special form of Association where:
+
+1.It represents Has-A relationship.
+2.It is a unidirectional association i.e. a one way relationship. For example, department can have students but vice versa is not possible and thus unidirectional in nature.
+3.In Aggregation, both the entries can survive individually which means ending one entity will not effect the other entity
+
+Example: There is an Institute which has no. of departments like CSE, EE. Every department has no. of students. So, we make a Institute class which has a reference to Object or no. of Objects (i.e. List of Objects) of the Department class. That means Institute class is associated with Department class through its Object(s). And Department class has also a reference to Object or Objects (i.e. List of Objects) of Student class means it is associated with Student class through its Object(s).
+It represents a Has-A relationship.
+
+When do we use Aggregation ??
+Code reuse is best achieved by aggregation.
+
+Composition
+
+Composition is a restricted form of Aggregation in which two entities are highly dependent on each other.
+
+1.It represents part-of relationship.
+2.In composition, both the entities are dependent on each other.
+3.When there is a composition between two entities, the composed object cannot exist without the other entity.
+
+In above example a library can have no. of books on same or different subjects. So, If Library gets destroyed then All books within that particular library will be destroyed. i.e. book can not exist without library. That’s why it is composition.
+
+Aggregation vs Composition
+
+1.Dependency: Aggregation implies a relationship where the child can exist independently of the parent. For example, Bank and Employee, delete the Bank and the Employee still exist. whereas Composition implies a relationship where the child cannot exist independent of the parent. Example: Human and heart, heart don’t exist separate to a Human
+2.Type of Relationship: Aggregation relation is “has-a” and composition is “part-of” relation.
+3.Type of association: Composition is a strong Association whereas Aggregation is a weak Assocation.
