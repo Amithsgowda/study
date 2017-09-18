@@ -32,3 +32,45 @@ postForLocation(): It creates new resource using HTTP POST method and returns th
 
 postForEntity(): It creates news resource using HTTP POST method to the given URI template. It returns ResponseEntity. 
 
+Syntax:
+
+getForEntity(URI url, Class<T> responseType)
+Retrieve a representation by doing a GET on the URL .
+
+getForEntity(String url, Class<T> responseType, Map<String,?> uriVariables)
+Retrieve a representation by doing a GET on the URI template.
+
+getForObject(URI url, Class<T> responseType)
+Retrieve a representation by doing a GET on the URL .
+
+put(URI url, Object request)
+Creates a new resource by PUTting the given object to URL.
+
+put(String url, Object request, Map<String,?> uriVariables)
+Creates a new resource by PUTting the given object to URI template.
+
+postForEntity(URI url, Object request, Class<T> responseType)
+Create a new resource by POSTing the given object to the URL, and returns the response as ResponseEntity.
+
+postForEntity(String url, Object request, Class<T> responseType, Map<String,?> uriVariables)
+Create a new resource by POSTing the given object to the URI template, and returns the response as HttpEntity.
+
+delete(URI url)
+Delete the resources at the specified URL.
+
+delete(String url, Map<String,?> uriVariables)
+Delete the resources at the specified URI.
+
+exchange(URI url, HttpMethod method, HttpEntity<?> requestEntity, Class<T> responseType)
+Execute the HTTP method to the given URI template, writing the given request entity to the request, and returns the response as ResponseEntity.
+
+exchange(String url, HttpMethod method, HttpEntity<?> requestEntity, Class<T> responseType, Map<String,?> uriVariables)
+Execute the HTTP method to the given URI template, writing the given request entity to the request, and returns the response as ResponseEntity.
+
+Links:
+
+http://www.baeldung.com/rest-template
+https://www.java2blog.com/spring-restful-client-resttemplate-example/
+
+
+
