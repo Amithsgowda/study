@@ -572,6 +572,7 @@ Example: There is an Institute which has no. of departments like CSE, EE. Every 
 It represents a Has-A relationship.
 
 When do we use Aggregation ??
+
 Code reuse is best achieved by aggregation.
 
 Composition
